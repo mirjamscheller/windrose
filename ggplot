@@ -1,0 +1,5 @@
+fullT <- ggplot(data= data2, aes(x=datetime)) +
+          geom_line(data = data2,aes( y= TempC *40000, colour = "dodgerblue"), colour = "dodgerblue" ) +
+          geom_line(data = data2,aes( y= IntLux, colour = "blue3"), colour = "blue3") +
+          scale_y_continuous(sec.axis = sec_axis(~./40000))+
+          nice
