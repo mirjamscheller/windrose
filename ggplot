@@ -1,5 +1,15 @@
+
+nice <-   theme_few()+
+  theme(panel.grid.minor.x = element_blank())+
+  theme(panel.grid.major.x = element_blank())+
+  theme(panel.grid.minor.y = element_blank())+
+  theme(axis.line = element_line())+
+  theme(panel.border = element_blank())+
+  theme(legend.position = "bottom")
+
 fullT <- ggplot(data= data2, aes(x=datetime)) +
           geom_line(data = data2,aes( y= TempC *40000, colour = "dodgerblue"), colour = "dodgerblue" ) +
           geom_line(data = data2,aes( y= IntLux, colour = "blue3"), colour = "blue3") +
           scale_y_continuous(sec.axis = sec_axis(~./40000))+
           nice
+
